@@ -1,0 +1,23 @@
+{
+  "name": "sqlserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "dev:seed": "node ./scripts/seed.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "flush-promises": "^1.0.2",
+    "jest": "^27.0.6",
+    "supertest": "^6.1.4"
+  }
+}

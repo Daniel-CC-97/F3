@@ -1,34 +1,34 @@
-import React from 'react';
-import PlayerForm from './PlayerForm';
+import React from "react";
+import PlayerForm from "./PlayerForm";
 import {
   determinePlayerNameClass,
   determineCard,
   determineStatClass,
-} from '../helper-functions/player-functions';
+} from "../helper-functions/player-functions";
 
-export default function TeamPlayer({ player, updatePlayerStats}) {
+export default function TeamPlayer({ player, updatePlayerStats }) {
   return (
     <>
-      <div className='Player_playerAndForm'>
-        <div className='Player_playerCard'>
+      <div className="Player_playerAndForm">
+        <div className="Player_playerCard">
           <img
-            className='Player_cardImage'
+            className="Player_cardImage"
             src={determineCard(player)}
-            alt='card design'
+            alt="card design"
           ></img>
           <div className={determinePlayerNameClass(player)}>
             <h3>{player.name}</h3>
           </div>
-          <div className='Player_playerImageContainer'>
+          <div className="Player_playerImageContainer">
             <img
-              className='Player_playerImage'
-              src={player.imageUrl}
-              alt='player profile pic'
+              className="Player_playerImage"
+              src={player.imgUrl}
+              alt="player profile pic"
             ></img>
           </div>
 
-          <div className='Player_playerStats'>
-            <div className='Player_playerStats1'>
+          <div className="Player_playerStats">
+            <div className="Player_playerStats1">
               <h5 className={determineStatClass(player)}>
                 Games: {player.games}
               </h5>
@@ -39,7 +39,7 @@ export default function TeamPlayer({ player, updatePlayerStats}) {
                 Losses: {player.losses}
               </h5>
             </div>
-            <div className='Player_playerStats2'>
+            <div className="Player_playerStats2">
               <h5 className={determineStatClass(player)}>
                 Motms: {player.motms}
               </h5>
@@ -47,7 +47,7 @@ export default function TeamPlayer({ player, updatePlayerStats}) {
                 Goals: {player.goals}
               </h5>
               <h5 className={determineStatClass(player)}>
-                GPG:{' '}
+                GPG:{" "}
                 {Math.round((player.goals / player.games) * 100) / 100 || 0}
               </h5>
             </div>
