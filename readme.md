@@ -42,38 +42,24 @@ cd ../server
 
 ## Features
 
-- Login & Register
-- Browse tours
-- Book the tour
-- Password encryption
-- Take the tour
+- Select players from total squad who will be playing in next game.
+- Generates teams based on stats previously recorded.
+- Record game stats, goals, motms etc.
+- Player cards appearance change based on their stats.
 
 ## Future Features
 
-- More tours!
-- Clues/Directions delivered by character in AR
-- Sign in through Google & Facebook
-- User option to create tours
-- Check and leave reviews
-- Implement Google API for maps
+- Add more players to your squad.
+- Implement redux state management.
+- Add login and register functionality.
+- Allow user to change their own cards appearance based on accomplishments.
 
 ## Technologies
 
-- TypeScript
 - JavaScript
 - PostgreSQL
 - Sequelize
-- React Native
-- Redux
-- Expo
 - Express
 - Node.js
+- Jest
 
-## Collaborators
-
-- @NidalEllawala
-- @Daniel-CC-97
-- @mariusobreja
-- @jah-edw
-
-[adventour]: https://github.com/jah-edw/F3-Frontend
