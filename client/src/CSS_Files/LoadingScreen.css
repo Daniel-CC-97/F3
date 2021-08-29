@@ -37,6 +37,11 @@
 .LoadingScreen_title{
   color: white;
   font-size: 10vh;
+  background-color: darkslategray;
+  border: solid white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: -1rem 0 3rem #000;
 }
 
 .LoadingScreen_titleContainer {

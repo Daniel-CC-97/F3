@@ -50,7 +50,7 @@ function App() {
 
   // Either adds or removes players to the 'playingSquad' depending on if they are already included or not.
   const handleClick = (player) => {
-    console.log(player.imageUrl);
+    console.log(player.calculateRating());
     let inList = false;
     let index = 0;
 
@@ -78,7 +78,6 @@ function App() {
   // Functions to update all the players stats after a game and reflect changes in the database.
 
   function updatePlayerStats(player, newGoals, newMotms) {
-    console.log(player.id);
     fetch(`http://localhost:3000/squad/${player.id}`, {
       method: 'PUT',
       body: JSON.stringify({ goals: newGoals, motms: newMotms }),

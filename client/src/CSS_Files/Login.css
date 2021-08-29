@@ -8,6 +8,9 @@
   width: 40vw;
   height: 40vh;
   display: flex;
+  background-color: darkslategray;
+  border-radius: 10px;
+  box-shadow: -1rem 0 3rem #000;
   /* flex-direction: column;
   justify-content: space-around; */
 }

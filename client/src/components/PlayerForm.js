@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS_Files/PlayerForm.css'
+import '../CSS_Files/PlayerForm.css';
 
 // form to update goals and motms stat.
 
@@ -9,7 +9,7 @@ export default function PlayerForm({ player, updatePlayerStats }) {
   function updateGoals(e) {
     const goals = Number(e.target.value);
     newGoals = Number(player.goals) + goals;
-    console.log(player.name, newGoals, newGoals+newGoals);
+    console.log(player.name, newGoals, newGoals + newGoals);
   }
 
   // takes user input and updates 'newMotms' variable, this is then passed to the updatePlayerStats function.
@@ -29,7 +29,10 @@ export default function PlayerForm({ player, updatePlayerStats }) {
       >
         <label className='PlayerForm_playerFormLabel'>
           Goals
-          <input placeholder={`${player.name}'s goals`} onChange={updateGoals} />
+          <input
+            placeholder={`${player.name}'s goals`}
+            onChange={updateGoals}
+          />
         </label>
         <label className='PlayerForm_playerFormLabel'>
           MOTM

@@ -33,7 +33,7 @@ export function determineCard(player) {
   if (player.motms >= 10) {
     url = blackCard.url;
   }
-  if (player.wins >= 20) {
+  if (player.wins >= 10) {
     url = fireWorkCard.url;
   }
 

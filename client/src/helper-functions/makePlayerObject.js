@@ -39,7 +39,6 @@ class MakePlayer {
   }
 
   teamGoalsPerGame() {
-    console.log(this.teamGoals, this.games);
     return Math.round((this.teamGoals / this.games) * 100) / 100;
   }
 

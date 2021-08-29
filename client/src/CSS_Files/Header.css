@@ -1,11 +1,12 @@
 .Header_title {
   color: white;
   font-size: 90px;
-  margin: 0px
+  margin: 0px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 header {
   display: flex;
   justify-content: space-around;
 }
-
