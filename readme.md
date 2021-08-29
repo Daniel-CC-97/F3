@@ -21,27 +21,24 @@ With an easy-to-use UI and fluid sign-up process, F3 is a great way to get out a
 
 In order to run F3 it is necessary to install and set-up Expo. Please refer to the documentation on the Expo website for further information. This can be run on any Windows or Apple PC. Additionally, postgreSQL is required in order to run the back-end database.
 
-1. Clone this repo & enter:
+1. Fork this repo, copy the new HTTPS code, and run:
 
 ```
-git clone https://github.com/jah-edw/F3-Frontend.git
+git clone 'HTTPS code you just copied'
 cd client
 ```
 
 2. Run `npm install` to install project dependencies into your local repo.
-3. Run `npm start` to generate a QR code which can be read on your mobile (you will need to download the Expo Go mobile app)
-4. Clone the backend repo:
+3. Run `npm start` to start the client.
 
 ```
-git clone https://github.com/NidalEllawala/F3-Backend.git
+cd ../server
 ```
 
 5. Run `npm install` to install project dependencies into your local repo.
-6. Create a local env. file and input local variables using the env-template file in the root of the folder as a guide.
-7. Make sure PostgreSQL is running.
-8. Run ` npm run dev:seed` to populate your database.
-9. Run ` node index.js` or `nodemon` to start the backend.
-10. Time to start exploring London!
+6. Make sure PostgreSQL is running.
+8. Run ` node index.js` or `nodemon` to start the backend.
+9.  Time to start recording your stats!
 
 ## Features
 
