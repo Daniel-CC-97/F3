@@ -1,18 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import '../CSS_Files/GameForm.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import "../CSS_Files/GameForm.css";
 
 //form to update goalsConceded, teamGoals, game, wins, losses.
 
-export default function GameForm({
-  team1,
-  team2,
-  updateGameStats,
-  updatePlayerWins,
-  updatePlayerLosses,
-  updateTeamGoals,
-  updateGoalsConceded,
-}) {
+export default function GameForm({ updatePlayer, team1, team2 }) {
   let team1goals = 0;
   let team2goals = 0;
 
@@ -20,33 +12,22 @@ export default function GameForm({
 
   const handleClick = () => {
     team1.forEach((player) => {
-      updateGameStats(player, Number(player.games) + 1);
+      const updates = {
+        games: player.games + 1,
+        wins: team1goals > team2goals ? player.wins + 1 : player.wins,
+        losses: team1goals < team2goals ? player.losses + 1 : player.losses,
+        goals: player.goals + team1goals,
+      };
+      updatePlayer(player, updates);
     });
     team2.forEach((player) => {
-      updateGameStats(player, Number(player.games) + 1);
-    });
-    if (team1goals > team2goals) {
-      team1.forEach((player) => {
-        updatePlayerWins(player, Number(player.wins) + 1);
-      });
-      team2.forEach((player) => {
-        updatePlayerLosses(player, Number(player.losses) + 1);
-      });
-    } else if (team1goals < team2goals) {
-      team2.forEach((player) => {
-        updatePlayerWins(player, Number(player.wins) + 1);
-      });
-      team1.forEach((player) => {
-        updatePlayerLosses(player, Number(player.losses) + 1);
-      });
-    }
-    team1.forEach((player) => {
-      updateTeamGoals(player, Number(player.teamGoals) + team1goals);
-      updateGoalsConceded(player, Number(player.goalsConceded) + team2goals);
-    });
-    team2.forEach((player) => {
-      updateTeamGoals(player, Number(player.teamGoals) + team2goals);
-      updateGoalsConceded(player, Number(player.goalsConceded) + team1goals);
+      const updates = {
+        games: player.games + 1,
+        wins: team2goals > team1goals ? player.wins + 1 : player.wins,
+        losses: team2goals < team1goals ? player.losses + 1 : player.losses,
+        goals: player.goals + team2goals,
+      };
+      updatePlayer(player, updates);
     });
   };
 
@@ -64,24 +45,24 @@ export default function GameForm({
   }
   return (
     <>
-      <div className='GameForm_teamGoalsForm'>
+      <div className="GameForm_teamGoalsForm">
         <form
           onSubmit={(e) => {
             e.preventDefault();
           }}
         >
-          <label className='GameForm_team1GoalForm'>
+          <label className="GameForm_team1GoalForm">
             Team 1 Goals: <input onChange={updateTeam1Goals}></input>
           </label>
-          <label className='GameForm_team2GoalForm'>
+          <label className="GameForm_team2GoalForm">
             Team 2 Goals: <input onChange={updateTeam2Goals}></input>
           </label>
         </form>
       </div>
-      <div className='GameForm_gameForm'>
-        <Link to={'/squad'}>
+      <div className="GameForm_gameForm">
+        <Link to={"/squad"}>
           <button
-            className='GameForm_submitButton'
+            className="GameForm_submitButton"
             onClick={() => {
               handleClick();
             }}

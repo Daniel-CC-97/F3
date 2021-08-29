@@ -1,6 +1,8 @@
-export default function playersByRating(squad){
+import calculateRating from "./calculateRating";
+
+export default function playersByRating(squad) {
   const newSquad = [...squad];
   return newSquad.sort((currentPlayer, nextPlayer) => {
-    return nextPlayer.calculateRating() - currentPlayer.calculateRating();
+    return calculateRating(nextPlayer) - calculateRating(currentPlayer);
   });
 };
